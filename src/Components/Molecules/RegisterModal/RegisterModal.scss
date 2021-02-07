@@ -1,0 +1,36 @@
+.modal-backdrop {
+  background-color: rgb(240, 242, 245) !important;
+}
+
+.modal {
+  &-dialog {
+    .modal-content {
+      border-radius: 8px;
+      top: 45px !important;
+      .modal-header {
+        align-items: flex-start;
+        &-text {
+          .modal-title {
+            color: #1c1e21;
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 38px;
+          }
+          .modal-subtitle {
+            color: #606770;
+            font-size: 15px;
+            line-height: 24px;
+          }
+        }
+        .btn-close {
+          margin-bottom: 0;
+        }
+      }
+
+      .modal-footer {
+        border-top: none;
+        justify-content: center;
+      }
+    }
+  }
+}
