@@ -8,12 +8,12 @@ import InputField from '../../Atom/Input'
 import {Row, Columns} from '../../Layout/Grid'
 
 import dataInputFields from './dataInputFields'
-import {getMonths} from '../../../Config/Moment'
+import {dataDay, dataMonth, dataYears} from '../../../Config/Moment'
 
 import './RegisterModal.scss'
 
 const RegisterModal = () => {
-  console.log(getMonths)
+  const years = dataYears(116)
   return (
     <Modal>
       <ModalHeader title="Daftar" subtitle="Ini cepat dan mudah."/>
@@ -33,27 +33,38 @@ const RegisterModal = () => {
         </Row>
         <Row>
           <Columns size="col-sm-4">
-            <select className="form-select" aria-label="8">
-              <option selected>8</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select className="form-select" aria-label="Tanggal" defaultValue="DEFAULT">
+              {
+                dataDay.map(result => {
+                  return (
+                    <option value={result.value} key={result.id} selected>
+                      {result.id}
+                    </option>
+                  )
+                })
+              }
             </select>
           </Columns>
           <Columns size="col-sm-4">
-            <select className="form-select" aria-label="Feb">
-              <option selected>Feb</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select className="form-select" aria-label="Bulan" defaultValue="DEFAULT">
+              {
+                dataMonth.map(result => {
+                  return (
+                    <option value={result.id} key={result.id}selected>{result.month}</option>
+                  )
+                })
+              }
             </select>
           </Columns>
           <Columns size="col-sm-4">
-            <select className="form-select" aria-label="2021">
-              <option selected>2021</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select className="form-select" aria-label="Tahun" defaultValue="DEFAULT">
+              {
+                years.map(resultYears => {
+                  return (
+                    <option selected value={resultYears} key={resultYears}>{resultYears}</option>
+                  )
+                })
+              }
             </select>
           </Columns>
         </Row>
