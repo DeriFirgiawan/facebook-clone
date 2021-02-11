@@ -13,7 +13,7 @@ class Login extends React.Component {
     return (
       <main className="Login__Page container">
         <HeroBanner img={Logo} alt="Facebook" text="Facebook membantu Anda terhubung dan berbagi dengan orang-orang dalam kehidupan Anda." title="Facebook" />
-        <LoginForm />
+        <LoginForm/>
         <RegisterForm />
       </main>
     )

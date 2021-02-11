@@ -1,6 +1,6 @@
 export const Modal = ({children}) => {
   return (
-    <div className="modal fade" id="showModal" tabIndex={-1} aria-labelledby="showModalLabel" aria-hidden="true">
+    <div className="modal fade show" id="showModal" tabIndex={-1} aria-labelledby="showModalLabel" aria-hidden="true">
       <div className="modal-dialog">
         <div className="modal-content">
           {children}
@@ -30,11 +30,10 @@ export const ModalBody = ({children}) => {
   )
 }
 
-export const ModalFooter = () => {
+export const ModalFooter = ({children}) => {
   return (
     <div className="modal-footer">
-      <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      <button type="button" className="btn btn-primary">Save changes</button>
+      {children}
     </div>
   )
 }

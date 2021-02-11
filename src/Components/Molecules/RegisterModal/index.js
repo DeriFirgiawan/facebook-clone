@@ -5,26 +5,33 @@ import {
   ModalFooter
 } from '../../Atom/Modal'
 import InputField from '../../Atom/Input'
+import Button from '../../Atom/Button'
 import {Row, Columns} from '../../Layout/Grid'
 
 import dataInputFields from './dataInputFields'
-import {dataDay, dataMonth, dataYears} from '../../../Config/Moment'
+import {getDataDays, getDataMonths, getDataYears} from '../../../Config/Moment'
 
 import './RegisterModal.scss'
 
-const RegisterModal = () => {
-  const years = dataYears(116)
+const RegisterModal = ({registerChangeText, clickToRegister}) => {
+  const years = getDataYears(116)
   return (
     <Modal>
-      <ModalHeader title="Daftar" subtitle="Ini cepat dan mudah."/>
+      <ModalHeader 
+        title="Daftar" 
+        subtitle="Ini cepat dan mudah."
+      />
       <ModalBody>
         <Row>
           {
             dataInputFields.map(result => {
               return (
-                <Columns size={result.col} key={result.uniqueId}>
+                <Columns 
+                size={result.col} 
+                key={result.uniqueId}>
                   <div className="mb-3">
-                    <InputField id={result.id} type={result.type} placeholder={result.text} />
+                    <InputField id={result.id} type={result.type} placeholder={result.text} onChange={registerChangeText}
+                    />
                   </div>
                 </Columns>
               )
@@ -32,12 +39,18 @@ const RegisterModal = () => {
           }
         </Row>
         <Row>
-          <Columns size="col-sm-4">
-            <select className="form-select" aria-label="Tanggal" defaultValue="DEFAULT">
+          <Columns size="col col-md-4 col-sm-6">
+            <select 
+            className="form-select" 
+            aria-label="Tanggal" 
+            defaultValue="DEFAULT">
               {
-                dataDay.map(result => {
+                getDataDays.map(result => {
                   return (
-                    <option value={result.value} key={result.id} selected>
+                    <option 
+                    value={result.value} 
+                    key={result.id} 
+                    selected>
                       {result.id}
                     </option>
                   )
@@ -45,18 +58,18 @@ const RegisterModal = () => {
               }
             </select>
           </Columns>
-          <Columns size="col-sm-4">
+          <Columns size="col col-md-4 col-sm-6">
             <select className="form-select" aria-label="Bulan" defaultValue="DEFAULT">
               {
-                dataMonth.map(result => {
+                getDataMonths.map(result => {
                   return (
-                    <option value={result.id} key={result.id}selected>{result.month}</option>
+                    <option value={result} key={result} selected>{result}</option>
                   )
                 })
               }
             </select>
           </Columns>
-          <Columns size="col-sm-4">
+          <Columns size="col col-md-4 col-sm-6">
             <select className="form-select" aria-label="Tahun" defaultValue="DEFAULT">
               {
                 years.map(resultYears => {
@@ -69,7 +82,9 @@ const RegisterModal = () => {
           </Columns>
         </Row>
       </ModalBody>
-      <ModalFooter />
+      <ModalFooter>
+        <Button color="success" title="Daftar" onClick={clickToRegister}/>
+      </ModalFooter>
     </Modal>
   )
 }

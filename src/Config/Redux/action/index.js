@@ -1,3 +1,5 @@
+// import firebase from '../../Firebase'
+
 export const changeShowModal = () => {
   return (dispatch) => {
     return dispatch({
@@ -6,3 +8,7 @@ export const changeShowModal = () => {
     })
   }
 }
+
+// export const RegisterToApi = (data) => ({
+//   return 
+// })

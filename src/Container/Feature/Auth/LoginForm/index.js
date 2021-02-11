@@ -25,6 +25,7 @@ class LoginForm extends React.Component {
   }
 
   render() {
+    console.log(this.props.isShowModal)
     let errorText
     if (this.state.lengthPassword) {
       errorText = 'Password minimal 8 character'
@@ -34,5 +35,6 @@ class LoginForm extends React.Component {
     )
   }
 }
+
 
 export default LoginForm

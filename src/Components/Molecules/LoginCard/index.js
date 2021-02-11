@@ -8,7 +8,7 @@ import {TextInfo} from '../../Atom/Info'
 
 import './LoginCard.scss'
 
-const LoginCard = ({changeEmail, changePassword, textInfo, clickShowRegister}) => {
+const LoginCard = ({changeEmail, changePassword, textInfo}) => {
   return (
     <Card>
       <CardBody>
