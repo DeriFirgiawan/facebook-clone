@@ -1,6 +1,7 @@
 const initialState = {
   passwordValidation: 'Password minimal 8 character',
-  showModal: false
+  showModal: false,
+  isLoading: true
 }
 
 const reducer = (state=initialState, action) => {
@@ -15,6 +16,13 @@ const reducer = (state=initialState, action) => {
     return {
       ...state,
       showModal: action.value
+    }
+  }
+
+  if (action.type === "CHANGE_ISLOADING") {
+    return {
+      ...state,
+      isLoading: action.value
     }
   }
 

@@ -8,19 +8,19 @@ import {TextInfo} from '../../Atom/Info'
 
 import './LoginCard.scss'
 
-const LoginCard = ({changeEmail, changePassword, textInfo}) => {
+const LoginCard = ({changeInput, textInfo, clickToLogin}) => {
   return (
     <Card>
       <CardBody>
         <div className="mb-3">
-          <Input type="email" id="email" placeholder="Email atau Nomer Telepon" onChange={changeEmail} />
+          <Input type="email" id="email" placeholder="Email atau Nomer Telepon" onChange={changeInput} />
         </div>
         <div className="mb-3">
-          <Input type="password" id="password" placeholder="Kata Sandi" onChange={changePassword} />
+          <Input type="password" id="password" placeholder="Kata Sandi" onChange={changeInput} />
           <TextInfo color="danger" text={textInfo} />
         </div>
         <div className="d-grid gap-2">
-          <Button color="primary" title="Login" />
+          <Button color="primary" title="Login" onClick={clickToLogin} />
         </div>
         <div className="card-bottom text-center mt-2">
           <Router>

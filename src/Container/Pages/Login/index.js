@@ -10,10 +10,11 @@ import './Login.scss'
 
 class Login extends React.Component {
   render() {
+    console.log(this.props)
     return (
       <main className="Login__Page container">
         <HeroBanner img={Logo} alt="Facebook" text="Facebook membantu Anda terhubung dan berbagi dengan orang-orang dalam kehidupan Anda." title="Facebook" />
-        <LoginForm/>
+        <LoginForm />
         <RegisterForm />
       </main>
     )

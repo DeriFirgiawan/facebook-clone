@@ -1,15 +1,24 @@
 import React from 'react'
+import {withRouter} from 'react-router'
+import {connect} from 'react-redux'
+
+import {loginUserToAPI} from '../../../../Config/Redux/action'
 
 import LoginCard from '../../../../Components/Molecules/LoginCard'
 
 class LoginForm extends React.Component {
   state = {
-    lengthPassword: false
+    email: '',
+    password: '',
+    lengthPassword: false,
   }
 
   handleChangeInput = (event) => {
     const idInput = event.target.id
     const resultInput = event.target.value
+    this.setState({
+      [idInput]: resultInput
+    })
 
     if (idInput === 'password') {
       if (resultInput.length < 8) {
@@ -24,17 +33,37 @@ class LoginForm extends React.Component {
     }
   }
 
+  handleClickToLogin = async () => {
+    const {email, password} = this.state
+
+    const res = await this.props.loginAPI({email, password}).catch(err => console.log(err))
+
+    if (res) {
+      this.props.history.push('/home')
+    } else {
+      console.log('Login Failed')
+      console.error(res)
+    }
+  }
+
   render() {
-    console.log(this.props.isShowModal)
     let errorText
     if (this.state.lengthPassword) {
       errorText = 'Password minimal 8 character'
     }
     return (
-      <LoginCard changeEmail={this.handleChangeInput} changePassword={this.handleChangeInput} textInfo={errorText}/>
+      <LoginCard changeInput={this.handleChangeInput} textInfo={errorText} clickToLogin={this.handleClickToLogin}/>
     )
   }
 }
 
 
-export default LoginForm
+const reduxState = state => ({
+  loading: state.isLoading
+})
+
+const reduxDispatch = dispatch => ({
+  loginAPI: (data) => dispatch(loginUserToAPI(data))
+})
+
+export default withRouter(connect(reduxState, reduxDispatch)(LoginForm))

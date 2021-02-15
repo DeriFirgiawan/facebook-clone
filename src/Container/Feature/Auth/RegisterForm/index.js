@@ -1,5 +1,6 @@
 import React from 'react'
-import firebase from '../../../../Config/Firebase'
+import {connect} from 'react-redux'
+import {registerUserToFirebase} from '../../../../Config/Redux/action'
 import RegisterModal from '../../../../Components/Molecules/RegisterModal'
 
 class RegisterForm extends React.Component{
@@ -17,21 +18,35 @@ class RegisterForm extends React.Component{
   }
 
   handleClickToRegister = () => {
-    const {emailField, passwordField} = this.state
-    firebase.auth().createUserWithEmailAndPassword(emailField, passwordField).then(res => {
-      console.log('success: ', res)
-    }).catch((error) => {
-      const errorCode = error.code
-      const errorMessage = error.message
-      console.error(errorCode)
-      console.error(errorMessage)
-    })
+    const {
+      emailField,
+      passwordField,
+      firstName,
+      lastName
+    } = this.state
+    const userName = `${firstName} ${lastName}`
+    setTimeout(() => {
+      this.props.registerAPI({
+        emailField,
+        passwordField,
+        userName
+      })
+    }, 0);
   }
   render(){
+    console.log(this.props.loading)
     return (
       <RegisterModal registerChangeText={this.handleChangeRegister} clickToRegister={this.handleClickToRegister}/>
     )
   }
 }
 
-export default RegisterForm
+const reduxState = (state) => ({
+  loading: state.isLoading
+})
+
+const reduxDispatch = (dispatch) => ({
+  registerAPI: (data) => dispatch(registerUserToFirebase(data))
+})
+
+export default connect(reduxState, reduxDispatch)(RegisterForm)
