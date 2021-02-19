@@ -1,7 +1,7 @@
 import Linked from '../../Atom/Linked'
 import SearchBar from '../SearchBar'
 import {NavbarBrand} from './NavbarBrand'
-import NavbarNav from './NavbarNav'
+import {NavbarNav} from './NavbarNav'
 
 import './Navbar.scss'
 
