@@ -26,9 +26,14 @@ ul,li,a {
   display: none;
 }
 
+.Logo__mobile {
+  width: 148px;
+  height: 52px;
+}
+
 @media (max-width: 575.98px) {
   .hide-sm {
-    display: none;
+    display: none !important;
   }
   .text-center-sm {
     text-align: center !important;
@@ -37,7 +42,7 @@ ul,li,a {
 
 @media (max-width: 991.98px) {
   .hide-md {
-    display: none;
+    display: none !important;
   }
   .text-center-md {
     text-align: center !important;

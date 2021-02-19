@@ -1,6 +1,6 @@
 const Dashboard = () => {
   return (
-    <h1>Hello React Facebook</h1>
+    <h1>Hello</h1>
   )
 }
 
