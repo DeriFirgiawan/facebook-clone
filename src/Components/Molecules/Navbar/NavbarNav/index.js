@@ -1,6 +1,6 @@
-export const NavbarNav = ({children, classes}) => {
+export const NavbarNav = ({children, classes, id}) => {
   return (
-    <div className={"navbar-nav " + classes}>
+    <div className={"navbar-nav " + classes} id={id}>
       {children}
     </div>
   )

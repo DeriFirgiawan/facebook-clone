@@ -21,15 +21,17 @@ ul,li,a {
   text-decoration: none !important;
 }
 
+// ==================== Custom Style =================
+
+.active {
+color: #166FE5 !important;
+}
+
 // Hide Component
 .hide-lg {
   display: none;
 }
 
-.Logo__mobile {
-  width: 148px;
-  height: 52px;
-}
 
 @media (max-width: 575.98px) {
   .hide-sm {
@@ -59,4 +61,24 @@ ul,li,a {
 
 .border-1 {
   border: 1px solid $colorBorderGrey50;
+}
+
+.bg-grey-50 {
+  background-color: #E4E6EB;
+}
+
+.pd-10 {
+  padding: 0 10px 0 10px !important;
+}
+
+.top {
+  top: 1.5px;
+}
+
+.top-3 {
+  top: 3px;
+}
+
+.radius-50 {
+  border-radius: 50%;
 }

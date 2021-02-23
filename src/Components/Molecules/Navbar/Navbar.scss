@@ -2,6 +2,49 @@
   background-color: #fff;
   height: 56px !important;
   @media (max-width: 575.98px) {
-    height: auto;
+    height: auto !important;
+  }
+  @media (max-width: 991.98px) {
+    height: auto !important;
+  }
+  .container-fluid {
+    flex-wrap: nowrap !important;
+    .navbar-toggler {
+      border: none !important;
+      position: relative;
+      @media (max-width: 575.98px) {
+        left: 5px + 2px;
+      }
+    }
+    #navigationOne.navbar-nav {
+      .nav-link {
+        color: #868282;
+        margin-left: 45px;
+      }
+    }
+    #navigationTwo.navbar-nav {
+      .nav-link {
+        margin-left: 15px;
+        border-radius: 50%;
+        padding: 0 10px 0 10px;
+        @media (max-width: 575.98px){
+          margin-left: 5px;
+          .bx {
+            font-size: 20px;
+          }
+        }
+        .bx {
+          font-size: 25px;
+          top: 1.5px;
+        }
+      }
+    }
+    .navbar-nav {
+      flex-direction: row;
+      .nav-link {
+        color: #1C1E21;
+        font-size: 30px;
+      }
+    }
   }
 }
