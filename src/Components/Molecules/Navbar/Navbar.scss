@@ -19,12 +19,17 @@
     #navigationOne.navbar-nav {
       .nav-link {
         color: #868282;
-        margin-left: 45px;
+        padding: 0 40px 0 40px;
+        position: relative;
+        margin-left: 5px;
+        &:hover {
+          background-color: #ebecf0;
+        }
       }
     }
     #navigationTwo.navbar-nav {
       .nav-link {
-        margin-left: 15px;
+        margin-left: 10px;
         border-radius: 50%;
         padding: 0 10px 0 10px;
         @media (max-width: 575.98px){
@@ -36,6 +41,20 @@
         .bx {
           font-size: 25px;
           top: 1.5px;
+        }
+        .profile-name {
+          bottom: 10px;
+        }
+      }
+      .dropdown {
+        .nav-link {
+          &:link{
+            color: #166FE5;
+          }
+        }
+        &-menu {
+          position: absolute;
+          right: 50px !important;
         }
       }
     }

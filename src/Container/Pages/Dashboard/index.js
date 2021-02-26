@@ -1,6 +1,12 @@
+import StoryBar from '../../../Components/Molecules/StoryBar'
+
+import './_Dashboard.scss'
+
 const Dashboard = () => {
   return (
-    <h1>Hello</h1>
+    <div className="content">
+      <StoryBar />
+    </div>
   )
 }
 

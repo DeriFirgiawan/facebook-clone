@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  .navbar-collapse {
+    width: 315px;
+    .nav-link {
+      color: #050505;
+      font-size: 15px;
+      transition: 0.4s ease;
+      &:hover {
+        background-color: #ebecf0;
+      }
+    }
+  }
+}
