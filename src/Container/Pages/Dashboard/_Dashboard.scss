@@ -1,3 +1,7 @@
 .content {
   padding: 0 60px 0 60px;
+  // Mobile Version
+  @media (max-width: 575.98px) {
+    padding: 0;
+  }
 }

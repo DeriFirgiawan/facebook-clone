@@ -1,15 +1,23 @@
-export const Card = ({children}) => {
+export const Card = ({children, clasess}) => {
   return (
-    <div className="card">
+    <div className={"card " + clasess}>
       {children}
     </div>
   )
 }
 
-export const CardBody = ({children}) => {
+Card.defaultProps = {
+  classes: ""
+}
+
+export const CardBody = ({children, clasess}) => {
   return (
-    <div className="card-body">
+    <div className={"card-body " + clasess}>
       {children}
     </div>
   )
+}
+
+CardBody.defaultProps = {
+  classes: ""
 }

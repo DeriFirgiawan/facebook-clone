@@ -12,15 +12,25 @@
     .navbar-toggler {
       border: none !important;
       position: relative;
+      left: 25px;
       @media (max-width: 575.98px) {
-        left: 5px + 2px;
+        left: 1px;
+      }
+      &:active {
+        outline: none !important;
       }
     }
     #navigationOne.navbar-nav {
+      @media (max-width: 991.98px) {
+        position: relative;
+        left: 3rem;
+        .nav-link {
+          padding: 0 20px 0 20px !important;
+        }
+      }
       .nav-link {
         color: #868282;
         padding: 0 40px 0 40px;
-        position: relative;
         margin-left: 5px;
         &:hover {
           background-color: #ebecf0;

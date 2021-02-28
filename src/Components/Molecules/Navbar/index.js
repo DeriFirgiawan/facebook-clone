@@ -1,22 +1,41 @@
+import {useState} from 'react'
 import {NavLink} from 'react-router-dom'
 import {NavbarBrand} from './NavbarBrand'
 import {NavbarSearch} from './NavbarSearch'
 import {NavbarToggle} from './NavbarToggle'
 import {NavbarNav} from './NavbarNav'
 import {dataNav} from './dataNav'
+import SideHome from '../SideHome'
 import Dropdown, {DropdownMenu} from '../../Atom/Dropdown'
 import Linked from '../../Atom/Linked'
 
 import './Navbar.scss'
 
 const Navbar = () => {
+  const [showSideBar, setShowSideBar] = useState(false)
+
+  function handleShowSideBar() {
+    setShowSideBar(true)
+
+    if (showSideBar) {
+      setShowSideBar(false)
+    }
+  }
+
+  let isSidebar
+  if (showSideBar) {
+    isSidebar = (
+      <NavbarNav classes="p-4">
+        <SideHome />
+      </NavbarNav>
+    )
+  }
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container-fluid">
         <NavbarBrand />
         <NavbarSearch />
         
-
         <NavbarNav classes="mx-auto hide-sm" id="navigationOne">
           {
             dataNav.navigation_1.map(result => {
@@ -28,7 +47,7 @@ const Navbar = () => {
             })
           }
         </NavbarNav>
-        <NavbarToggle />
+        <NavbarToggle onClick={handleShowSideBar} />
         <NavbarNav classes="ms-auto" id="navigationTwo">
           <Linked className="nav-link hide-sm hide-md" url="#">
             <img src="https://placeimg.com/28/28/people" alt="user" className="radius-50"/>
@@ -54,6 +73,7 @@ const Navbar = () => {
           </Dropdown>
         </NavbarNav>
       </div>
+      {isSidebar}
     </nav>
   )
 }

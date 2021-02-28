@@ -1,6 +1,14 @@
 .wrapper {
   display: flex;
   align-items: flex-start;
+  @media (max-width: 575.98px) {
+    align-items: center;
+    justify-content: center;
+  }
+  @media (max-width: 991.98px) {
+    align-items: center;
+    justify-content: center;
+  }
   .navbar-collapse {
     width: 315px;
     .nav-link {
