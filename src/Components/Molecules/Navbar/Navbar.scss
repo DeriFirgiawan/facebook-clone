@@ -1,5 +1,6 @@
 .navbar {
   background-color: #fff;
+  box-shadow: 0 1px 2px rgba($color: #000000, $alpha: 0.2);
   height: 56px !important;
   @media (max-width: 575.98px) {
     height: auto !important;
@@ -21,9 +22,10 @@
       }
     }
     #navigationOne.navbar-nav {
+      position: relative;
+      left: 0.5rem;
       @media (max-width: 991.98px) {
-        position: relative;
-        left: 3rem;
+        left: 4rem;
         .nav-link {
           padding: 0 20px 0 20px !important;
         }
@@ -32,6 +34,7 @@
         color: #868282;
         padding: 0 40px 0 40px;
         margin-left: 5px;
+        border-radius: 10px;
         &:hover {
           background-color: #ebecf0;
         }
@@ -39,32 +42,28 @@
     }
     #navigationTwo.navbar-nav {
       .nav-link {
-        margin-left: 10px;
-        border-radius: 50%;
-        padding: 0 10px 0 10px;
-        @media (max-width: 575.98px){
-          margin-left: 5px;
-          .bx {
-            font-size: 20px;
-          }
+        margin-left: 5px;
+        margin-top: 10px;
+        @media (max-width: 575.98px) {
+          margin-top: 0;
         }
-        .bx {
-          font-size: 25px;
-          top: 1.5px;
-        }
-        .profile-name {
-          bottom: 10px;
+        @media (max-width: 991.98px) {
+          margin-top: 0;
         }
       }
+      .nav-link.user-profile {
+        margin-top: 0;
+        .profile-name {
+          position: relative;
+          left: 1px;
+          right: 0;
+          top: -4px;
+        }
+      }
+
       .dropdown {
         .nav-link {
-          &:link{
-            color: #166FE5;
-          }
-        }
-        &-menu {
-          position: absolute;
-          right: 50px !important;
+          font-size: 24px;
         }
       }
     }

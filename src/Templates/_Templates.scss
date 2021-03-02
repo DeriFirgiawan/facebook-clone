@@ -1,6 +1,7 @@
 .wrapper {
   display: flex;
   align-items: flex-start;
+  margin-top: 5rem;
   @media (max-width: 575.98px) {
     align-items: center;
     justify-content: center;

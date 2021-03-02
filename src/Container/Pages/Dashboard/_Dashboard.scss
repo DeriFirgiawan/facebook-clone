@@ -1,5 +1,9 @@
 .content {
   padding: 0 60px 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   // Mobile Version
   @media (max-width: 575.98px) {
     padding: 0;

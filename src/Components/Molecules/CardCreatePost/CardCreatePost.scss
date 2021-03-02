@@ -1,0 +1,63 @@
+.Form-Post {
+  width: 500px;
+  @media (max-width: 575.98px) {
+    width: 100%;
+    &-Body {
+      &-Input {
+        width: 320px !important;
+      }
+    }
+  }
+  &-Body {
+    display: flex;
+    align-items: center;
+    &-Input {
+      cursor: pointer;
+      background-color: #F0F2F5;
+      border-radius: 20px;
+      height: 40px;
+      padding: 8px 12px 8px 12px;
+      width: 420px;
+      &-Text {
+        font-size: 17px;
+        color: #65676B;
+      }
+    }
+  }
+  &-Footer {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff !important;
+    @media (max-width: 575.98px) {
+      justify-content: center;
+    }
+    margin: 0 1rem 0 1rem;
+    &-Icon {
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      .bx {
+        color: #E42645;
+        font-size: 24px;
+      }
+      .text {
+        color: #65676B;
+        font-size: 15px;
+        font-weight: bold;
+      }
+      &:nth-child(2) {
+        .bx {
+          color: #45BD62;
+        }
+      }
+
+      &:hover {
+        background-color: #f2f2f2;
+      }
+    }
+  }
+}

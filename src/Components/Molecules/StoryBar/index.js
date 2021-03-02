@@ -4,7 +4,7 @@ import './_StoryBar.scss'
 
 const StoryBar = () => {
   return (
-    <Card clasess="StoryBar">
+    <Card clasess="StoryBar shadows-1 border-0">
       <CardBody clasess="StoryBar-content">
         <div className="card-body-icon">
           <i className="bx bx-plus"></i>

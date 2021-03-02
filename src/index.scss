@@ -67,6 +67,10 @@ color: #166FE5 !important;
   background-color: #E4E6EB;
 }
 
+.icon-size-24 {
+  font-size: 24px !important;
+}
+
 .pd-10 {
   padding: 0 10px 0 10px !important;
 }
@@ -86,6 +90,10 @@ color: #166FE5 !important;
   height: 28px;
 }
 
+.shadows-1 {
+  box-shadow: 0 1px 2px rgba($color: #000000, $alpha: 0.2) !important;
+}
+
 .top {
   top: 1.5px;
 }
@@ -96,4 +104,9 @@ color: #166FE5 !important;
 
 .radius-50 {
   border-radius: 50%;
+}
+
+.wh-40 {
+  width: 40px;
+  height: 40px;
 }

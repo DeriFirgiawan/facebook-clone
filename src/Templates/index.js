@@ -7,7 +7,7 @@ const Templates = ({sidebar, content}) => {
   return (
     <>
       <Navbar />
-      <main className="wrapper mt-3">
+      <main className="wrapper">
         <Sidebar>
           {sidebar}
         </Sidebar>

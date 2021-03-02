@@ -31,7 +31,7 @@ const Navbar = () => {
     )
   }
   return (
-    <nav className="navbar navbar-expand-lg navbar-light">
+    <nav className="navbar fixed-top navbar-expand-lg navbar-light">
       <div className="container-fluid">
         <NavbarBrand />
         <NavbarSearch />
@@ -49,26 +49,26 @@ const Navbar = () => {
         </NavbarNav>
         <NavbarToggle onClick={handleShowSideBar} />
         <NavbarNav classes="ms-auto" id="navigationTwo">
-          <Linked className="nav-link hide-sm hide-md" url="#">
+          <Linked className="nav-link user-profile hide-sm hide-md" url="#">
             <img src="https://placeimg.com/28/28/people" alt="user" className="radius-50"/>
-            <span className="profile-name fw-bold position-relative mb-2">
+            <span className="profile-name fw-bold">
               Febby
             </span>
           </Linked>
 
-          <NavLink className="nav-link bg-grey-50 radius-50" to="/post" title="Post">
-            <i className="bx bx-plus position-relative top"></i>
+          <NavLink className="nav-link d-inline-flex align-content-center justify-content-center bg-grey-50 radius-50 wh-40" to="/post" title="Post">
+            <i className="bx bx-plus icon-size-24"></i>
           </NavLink>
 
-          <NavLink className="nav-link bg-grey-50 radius-50 " to="/obrolan" title="Obrolan">
-            <i className="bx bxl-messenger position-relative top"></i>
+          <NavLink className="nav-link d-inline-flex align-content-center justify-content-center bg-grey-50 radius-50 wh-40" to="/obrolan" title="Obrolan">
+            <i className="bx bxl-messenger icon-size-24"></i>
           </NavLink>
 
-          <Dropdown classes="nav-link bg-grey-50 radius-50" icon="bxs-bell">
+          <Dropdown classes="nav-link d-inline-flex align-content-center justify-content-center bg-grey-50 radius-50 wh-40" icon="bxs-bell">
             <DropdownMenu />
           </Dropdown>
 
-          <Dropdown classes="nav-link bg-grey-50 radius-50" icon="bxs-down-arrow">
+          <Dropdown classes="nav-link d-inline-flex align-content-center justify-content-center bg-grey-50 radius-50 wh-40" icon="bxs-down-arrow">
             <DropdownMenu />
           </Dropdown>
         </NavbarNav>
