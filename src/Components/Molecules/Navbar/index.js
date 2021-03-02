@@ -5,6 +5,7 @@ import {NavbarSearch} from './NavbarSearch'
 import {NavbarToggle} from './NavbarToggle'
 import {NavbarNav} from './NavbarNav'
 import {dataNav} from './dataNav'
+import {ImageProfile} from '../../Atom/DummyProfile'
 import SideHome from '../SideHome'
 import Dropdown, {DropdownMenu} from '../../Atom/Dropdown'
 import Linked from '../../Atom/Linked'
@@ -50,7 +51,7 @@ const Navbar = () => {
         <NavbarToggle onClick={handleShowSideBar} />
         <NavbarNav classes="ms-auto" id="navigationTwo">
           <Linked className="nav-link user-profile hide-sm hide-md" url="#">
-            <img src="https://placeimg.com/28/28/people" alt="user" className="radius-50"/>
+            <ImageProfile size="28" alt="user" />
             <span className="profile-name fw-bold">
               Febby
             </span>

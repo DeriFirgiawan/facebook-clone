@@ -1,0 +1,29 @@
+.modal {
+  &-dialog {
+    .modal-content {
+      .modal-header {
+        justify-content: center;
+        align-items: center;
+        margin: 0 1rem 0 1rem;
+        &-text {
+          .modal-title {
+            font-size: 20px;
+          }
+        }
+        .btn-close {
+          background-color: #E4E6EB;
+          border-radius: 50%;
+          margin: 0;
+          position: relative;
+          left: 8rem;
+          width: 36px;
+          height: 36px;
+          padding: 0;
+          @media (max-width: 575.98px) {
+            left: 5rem;
+          }
+        }
+      }
+    }
+  }
+}

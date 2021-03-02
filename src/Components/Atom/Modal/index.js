@@ -10,9 +10,9 @@ export const Modal = ({children}) => {
   )
 }
 
-export const ModalHeader = ({title, subtitle}) => {
+export const ModalHeader = ({classes, title, subtitle}) => {
   return (
-    <div className="modal-header">
+    <div className={"modal-header " + classes}>
       <div className="modal-header-text">
         <h5 className="modal-title" id="showModalLabel">{title}</h5>
         <small className="modal-subtitle">{subtitle}</small>
@@ -20,6 +20,10 @@ export const ModalHeader = ({title, subtitle}) => {
       <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
     </div>
   )
+}
+
+ModalHeader.defaultProps = {
+  classes: ""
 }
 
 export const ModalBody = ({children}) => {

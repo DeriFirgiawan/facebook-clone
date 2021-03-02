@@ -8,7 +8,7 @@ const CardCreatePost = () => {
     <Card classes="Form-Post mt-3 shadows-1 border-0">
       <CardBody classes="Form-Post-Body">
         <img src="https://placeimg.com/40/40/people" alt="user" className="radius-50"/>
-        <div className="Form-Post-Body-Input ms-3">
+        <div className="Form-Post-Body-Input ms-3" role="button" data-bs-toggle="modal" data-bs-target="#showModal">
           <span className="Form-Post-Body-Input-Text">
             Apa yang Anda Pikirkan, Febby?
           </span>
