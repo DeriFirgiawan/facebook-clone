@@ -4,8 +4,8 @@ import './_StoryBar.scss'
 
 const StoryBar = () => {
   return (
-    <Card clasess="StoryBar shadows-1 border-0">
-      <CardBody clasess="StoryBar-content">
+    <Card classes="StoryBar shadows-1 border-0">
+      <CardBody classes="StoryBar-content">
         <div className="card-body-icon">
           <i className="bx bx-plus"></i>
         </div>
