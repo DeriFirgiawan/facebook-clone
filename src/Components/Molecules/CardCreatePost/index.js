@@ -1,4 +1,5 @@
 import {Card, CardBody, CardFooter} from '../../Atom/Card'
+import {ImageProfile} from '../../Atom/DummyProfile'
 import FormPostUpload from './FormPostUpload'
 
 import './CardCreatePost.scss'
@@ -7,7 +8,7 @@ const CardCreatePost = () => {
   return (
     <Card classes="Form-Post mt-3 shadows-1 border-0">
       <CardBody classes="Form-Post-Body">
-        <img src="https://placeimg.com/40/40/people" alt="user" className="radius-50"/>
+        <ImageProfile size="40" alt="user" />
         <div className="Form-Post-Body-Input ms-3" role="button" data-bs-toggle="modal" data-bs-target="#showModal">
           <span className="Form-Post-Body-Input-Text">
             Apa yang Anda Pikirkan, Febby?

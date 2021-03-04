@@ -35,11 +35,12 @@ class LoginForm extends React.Component {
 
   handleClickToLogin = async () => {
     const {email, password} = this.state
+    const {history} = this.props
 
     const res = await this.props.loginAPI({email, password}).catch(err => console.log(err))
 
     if (res) {
-      this.props.history.push('/home')
+      history.push('/home')
     } else {
       console.log('Login Failed')
       console.error(res)

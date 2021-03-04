@@ -7,7 +7,10 @@
         margin: 0 1rem 0 1rem;
         &-text {
           .modal-title {
+            position: relative;
             font-size: 20px;
+            font-weight: bold;
+            left: 1rem;
           }
         }
         .btn-close {
@@ -21,6 +24,20 @@
           padding: 0;
           @media (max-width: 575.98px) {
             left: 5rem;
+          }
+        }
+      }
+      .modal-body {
+        &-content {
+          .form-control {
+            background-color: #fff !important;
+            border: none !important;
+            color: #050505;
+            font-weight: 400;
+            line-height: 1.1667;
+            &::placeholder {
+              font-size: 1.5rem;
+            }
           }
         }
       }

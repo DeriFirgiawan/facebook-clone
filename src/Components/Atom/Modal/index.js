@@ -34,10 +34,14 @@ export const ModalBody = ({children}) => {
   )
 }
 
-export const ModalFooter = ({children}) => {
+export const ModalFooter = ({children, classes}) => {
   return (
-    <div className="modal-footer">
+    <div className={"modal-footer " + classes}>
       {children}
     </div>
   )
+}
+
+ModalFooter.defaultProps = {
+  classes: ""
 }

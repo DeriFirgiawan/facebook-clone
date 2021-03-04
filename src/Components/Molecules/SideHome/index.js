@@ -1,4 +1,5 @@
 import Linked from '../../Atom/Linked'
+import {ImageProfile} from '../../Atom/DummyProfile'
 
 import Icons2 from '../../../Assets/Icons/2.png'
 import Icons3 from '../../../Assets/Icons/3.png'
@@ -8,11 +9,12 @@ import Icons6 from '../../../Assets/Icons/6.png'
 import Icons7 from '../../../Assets/Icons/7.png'
 import Icons8 from '../../../Assets/Icons/8.png'
 
+
 const SideHome = () => {
   return (
     <>
       <Linked className="nav-link" url="/profile">
-        <img src="https://placeimg.com/28/28/people" alt="user" className="radius-50"/>
+        <ImageProfile size="28" alt="user" />
         <span className="mt-3 ms-3">Febby</span>
       </Linked>
       <Linked className="nav-link" url="/tambah-teman">
