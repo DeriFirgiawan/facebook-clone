@@ -1,0 +1,47 @@
+.Post-Content {
+  width: 500px !important;
+  &-Body {
+    &-Profile {
+      display: inline-flex;
+      align-items: center;
+      width: 100%;
+      &-Information {
+        .Profile-Name, span {
+          padding: 0;
+          margin: 0;
+          line-height: 15px;
+        }
+        span {
+          color: #65676B;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  &-Footer {
+    background-color: #fff !important;
+    border-radius: 10px !important;
+    border: none !important;
+    &-Comment {
+      align-items: center;
+      border-top: 1px solid #DADDE1;
+      border-bottom: 1px solid #DADDE1;
+      color: #65676B;
+      display: flex;
+      padding: .5rem 1rem;
+      justify-content: space-around;
+      .Post-Icon {
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        &-Text {
+          font-size: 15px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  @media (max-width: 575.98px) {
+    width: 100% !important;
+  }
+}

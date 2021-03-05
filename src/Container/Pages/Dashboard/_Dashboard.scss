@@ -6,7 +6,10 @@
   flex-direction: column;
   // Mobile Version
   @media (max-width: 575.98px) {
-    padding: 0;
-    margin: .5rem;
+    width: 100%;
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-left: var(--bs-gutter-x,.75rem);
+    margin-right: auto;
+    margin-left: auto;
   }
 }

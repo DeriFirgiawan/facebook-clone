@@ -1,6 +1,6 @@
-const Dropdown = ({icon, children, classes}) => {
+const Dropdown = ({icon, children, classes, position}) => {
   return (
-    <div className="dropdown">
+    <div className={"dropdown " + position}>
       <span className={classes} role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
         <i className={"bx position-relative top " + icon}></i>
       </span>
@@ -10,7 +10,8 @@ const Dropdown = ({icon, children, classes}) => {
 }
 
 Dropdown.defaultProps = {
-  classes: "btn btn-secondary dropdown-toggle"
+  classes: "btn btn-secondary dropdown-toggle",
+  position: ""
 }
 
 export const DropdownMenu = () => {
