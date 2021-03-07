@@ -3,10 +3,10 @@ import Sidebar from '../Components/Layout/Sidebar'
 
 import './_Templates.scss'
 
-const Templates = ({sidebar, content}) => {
+const Templates = ({sidebar, content, shortName, fullName}) => {
   return (
     <>
-      <Navbar />
+      <Navbar shortName={shortName} fullName={fullName} />
       <main className="wrapper">
         <Sidebar>
           {sidebar}

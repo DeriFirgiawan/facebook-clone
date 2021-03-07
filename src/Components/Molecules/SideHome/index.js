@@ -10,12 +10,12 @@ import Icons7 from '../../../Assets/Icons/7.png'
 import Icons8 from '../../../Assets/Icons/8.png'
 
 
-const SideHome = () => {
+const SideHome = ({fullName}) => {
   return (
     <>
       <Linked className="nav-link" url="/profile">
         <ImageProfile size="28" alt="user" />
-        <span className="mt-3 ms-3">Febby</span>
+        <span className="mt-3 ms-3">{fullName}</span>
       </Linked>
       <Linked className="nav-link" url="/tambah-teman">
         <img className="s-28" src={Icons2} alt="Tambah Teman"/>

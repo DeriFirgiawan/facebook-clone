@@ -12,7 +12,7 @@ import Linked from '../../Atom/Linked'
 
 import './Navbar.scss'
 
-const Navbar = () => {
+const Navbar = ({shortName, fullName}) => {
   const [showSideBar, setShowSideBar] = useState(false)
 
   function handleShowSideBar() {
@@ -27,7 +27,7 @@ const Navbar = () => {
   if (showSideBar) {
     isSidebar = (
       <NavbarNav classes="p-4">
-        <SideHome />
+        <SideHome fullName={fullName} />
       </NavbarNav>
     )
   }
@@ -53,7 +53,7 @@ const Navbar = () => {
           <Linked className="nav-link user-profile hide-sm hide-md" url="#">
             <ImageProfile size="28" alt="user" />
             <span className="profile-name fw-bold">
-              Febby
+              {shortName}
             </span>
           </Linked>
 
