@@ -40,6 +40,7 @@ class LoginForm extends React.Component {
     const res = await this.props.loginAPI({email, password}).catch(err => console.log(err))
 
     if (res) {
+      localStorage.setItem('userData', JSON.stringify(res))
       history.push('/home')
     } else {
       console.log('Login Failed')
