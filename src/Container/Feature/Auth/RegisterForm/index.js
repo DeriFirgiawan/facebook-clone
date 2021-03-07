@@ -11,6 +11,12 @@ class RegisterForm extends React.Component{
     passwordField: ''
   }
 
+  convertTextCapital = (str) => {
+    return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function (word) {
+      return word.toUpperCase()
+    })
+  }
+
   handleChangeRegister = (event) => {
     this.setState({
       [event.target.id]: event.target.value
@@ -23,8 +29,13 @@ class RegisterForm extends React.Component{
       passwordField,
       firstName,
       lastName
-    } = this.state
-    const userName = `${firstName} ${lastName}`
+    } = this.state 
+
+    const yourFirstName = this.convertTextCapital(firstName)
+    const yourLastName = this.convertTextCapital(lastName)
+
+    const userName = `${yourFirstName} ${yourLastName}`
+
     setTimeout(() => {
       this.props.registerAPI({
         emailField,
@@ -34,7 +45,6 @@ class RegisterForm extends React.Component{
     }, 0);
   }
   render(){
-    console.log(this.props.loading)
     return (
       <RegisterModal registerChangeText={this.handleChangeRegister} clickToRegister={this.handleClickToRegister}/>
     )
