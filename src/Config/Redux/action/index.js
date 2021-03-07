@@ -38,11 +38,18 @@ export const registerUserToFirebase = (data) => (dispatch) => {
 
 export const loginUserToAPI = (data) => (dispatch) => {
   return new Promise((resolve, reject) => {
-    dispatch({type: "CHANGE_ISLOADING", value: false})
+    dispatch({type: "CHANGE_ISLOADING", value: true})
     firebase.auth().signInWithEmailAndPassword(data.email, data.password)
       .then(res => {
-        console.log('Success ', res)
-        resolve(true)
+        const dataUser = {
+          displayName: res.user.displayName,
+          email: res.user.email,
+          uid: res.user.uid,
+          refreshToken: res.user.refreshToken
+        }
+        dispatch({type: "CHANGE_ISLOADING", value: false})
+        dispatch({type: "CHANGE_USER", value: dataUser })
+        resolve(dataUser)
       })
 
       .catch((error) => {
