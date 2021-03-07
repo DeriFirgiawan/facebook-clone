@@ -1,21 +1,34 @@
+import React from 'react'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {connect} from 'react-redux'
 
-// import Navbar from '../Components/Molecules/Navbar'
 import Templates from '../Templates'
 import Dashboard from '../Container/Pages/Dashboard'
 
 import SideHome from '../Components/Molecules/SideHome'
 
-export default function RouterHome() {
-  return (
-    <Router>
-      <Templates 
-      sidebar={
-        <Route path="/home" exact component={SideHome}/>
-      } 
-      content={
-        <Route path="/home" exact component={Dashboard}/>
-      } />
-    </Router>
-  )
+class RouterHome extends React.Component {
+  render() {
+    const fullUserName = this.props.userName.displayName
+    const shortName = fullUserName.split(' ')
+    return (
+      <Router>
+        <Templates shortName={shortName[0]} fullName={fullUserName}
+        sidebar={
+          <Route path="/home" exact>
+            <SideHome fullName={fullUserName} />
+          </Route>
+        } 
+        content={
+          <Route path="/home" exact component={Dashboard}/>
+        } />
+      </Router>
+    )
+  }
 }
+
+const reduxState = (state) => ({
+  userName: state.user,
+})
+
+export default connect(reduxState, null)(RouterHome)
