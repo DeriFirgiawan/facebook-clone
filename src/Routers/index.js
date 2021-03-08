@@ -20,7 +20,9 @@ class RouterHome extends React.Component {
           </Route>
         } 
         content={
-          <Route path="/home" exact component={Dashboard}/>
+          <Route path="/home" exact >
+            <Dashboard fullName={fullUserName} shortName={shortName[0]} />
+          </Route>
         } />
       </Router>
     )
