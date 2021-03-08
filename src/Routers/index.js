@@ -9,20 +9,19 @@ import SideHome from '../Components/Molecules/SideHome'
 
 class RouterHome extends React.Component {
   render() {
-    const fullUserName = this.props.userName.displayName
-    const shortName = fullUserName.split(' ')
+    const getDataUser = JSON.parse(localStorage.getItem('userData'))
+    const fullName = getDataUser.displayName
+    const shortName = fullName.split(' ')
     return (
       <Router>
-        <Templates shortName={shortName[0]} fullName={fullUserName}
+        <Templates shortName={shortName[0]} fullName={fullName}
         sidebar={
           <Route path="/home" exact>
-            <SideHome fullName={fullUserName} />
+            <SideHome fullName={fullName} />
           </Route>
         } 
         content={
-          <Route path="/home" exact >
-            <Dashboard fullName={fullUserName} shortName={shortName[0]} />
-          </Route>
+          <Route path="/home" exact component={Dashboard} />
         } />
       </Router>
     )
