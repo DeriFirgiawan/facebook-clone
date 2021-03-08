@@ -4,14 +4,14 @@ import FormPostUpload from './FormPostUpload'
 
 import './CardCreatePost.scss'
 
-const CardCreatePost = () => {
+const CardCreatePost = ({shortName}) => {
   return (
     <Card classes="Form-Post mt-3 shadows-1 border-0">
       <CardBody classes="Form-Post-Body">
         <ImageProfile size="40" alt="user" />
         <div className="Form-Post-Body-Input ms-3" role="button" data-bs-toggle="modal" data-bs-target="#showModal">
           <span className="Form-Post-Body-Input-Text">
-            Apa yang Anda Pikirkan, Febby?
+            Apa yang Anda pikirkan, {shortName} ?
           </span>
         </div>
       </CardBody>
