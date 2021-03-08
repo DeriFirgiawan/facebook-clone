@@ -1,4 +1,4 @@
-import firebase from '../../Firebase'
+import firebase, {database} from '../../Firebase'
 
 export const changeShowModal = () => {
   return (dispatch) => {
@@ -59,5 +59,13 @@ export const loginUserToAPI = (data) => (dispatch) => {
         console.error(errorMessage)
         reject(false)
       })
+  })
+}
+
+export const addDataToApi = (data) => (dispatch) => {
+  database.ref('post/' + data.userId).push({
+    userName: data.userName,
+    date: data.date,
+    content: data.content
   })
 }
