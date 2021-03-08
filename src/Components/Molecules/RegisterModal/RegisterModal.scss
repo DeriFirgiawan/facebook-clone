@@ -7,10 +7,11 @@
     .modal-content {
       border-radius: 8px;
       top: 45px !important;
-      .modal-header {
+      .Register-Modal-Header {
         align-items: flex-start;
         border-bottom: 1px solid #dadde1;
-        &-text {
+        .modal-header-text {
+          text-align: left;
           .modal-title {
             color: #1c1e21;
             font-weight: 500;
