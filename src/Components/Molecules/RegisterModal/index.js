@@ -18,6 +18,7 @@ const RegisterModal = ({registerChangeText, clickToRegister}) => {
   return (
     <Modal>
       <ModalHeader 
+        classes="Register-Modal-Header"
         title="Daftar" 
         subtitle="Ini cepat dan mudah."
       />
