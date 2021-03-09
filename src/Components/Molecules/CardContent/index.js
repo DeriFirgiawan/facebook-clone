@@ -4,7 +4,7 @@ import {ImageProfile} from '../../Atom/DummyProfile'
 
 import './CardContent.scss'
 
-const CardContent = () => {
+const CardContent = ({name, date, content}) => {
   return (
     <Card classes="Post-Content mt-3 shadows-1 border-0">
       <CardBody classes="Post-Content-Body">
@@ -12,10 +12,10 @@ const CardContent = () => {
           <ImageProfile size="40" alt="user" />
           <div className="Post-Content-Body-Profile-Information mt-1 ms-3">
             <p className="Profile-Name fw-bold">
-              Febby
+              {name}
             </p>
             <span className="text-muted">
-              Date
+              {date}
             </span>
           </div>
           <Dropdown classes="Post-Content-Body-More" icon="bx-dots-horizontal-rounded" position="ms-auto">
@@ -24,7 +24,7 @@ const CardContent = () => {
         </div>
         <article className="Post-Content-Body-Content">
           <span className="Text-Content">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+            {content}
           </span>
         </article>
       </CardBody>
