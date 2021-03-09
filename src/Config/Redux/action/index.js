@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import firebase, {database} from '../../Firebase'
 
 export const changeShowModal = () => {
@@ -67,5 +68,24 @@ export const addDataToApi = (data) => (dispatch) => {
     userName: data.userName,
     date: data.date,
     content: data.content
+  })
+}
+
+export const getDataFromApi = () => (dispatch) => {
+  const urlPost = database.ref('post/')
+  return new Promise((resolve, reject) => {
+    urlPost.on('value', function(snapshot) {
+      console.log(snapshot.val())
+      const data = []
+      Object.keys(snapshot.val()).map(keys => {
+        data.push({
+          id: keys,
+          data: snapshot.val()[keys],
+          allData: data[keys]
+        })
+      })
+      dispatch({type: "SET_POSTS", value: data})
+      resolve(snapshot.val())
+    })
   })
 }
