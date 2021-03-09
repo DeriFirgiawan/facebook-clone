@@ -1,7 +1,8 @@
 const initialState = {
   passwordValidation: "Password minimal 8 character",
   isLoading: true,
-  user: {}
+  user: {},
+  posts: []
 }
 
 const reducer = (state=initialState, action) => {
@@ -23,6 +24,13 @@ const reducer = (state=initialState, action) => {
     return {
       ...state,
       user: action.value
+    }
+  }
+
+  if (action.type === "SET_POSTS") {
+    return {
+      ...state,
+      posts: action.value
     }
   }
 
