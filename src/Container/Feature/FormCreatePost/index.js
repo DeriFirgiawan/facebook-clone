@@ -8,9 +8,7 @@ import CreatePostModal from '../../../Components/Molecules/CreatePostModal'
 
 class FormCreatePost extends React.Component {
   state = {
-    date: "",
-    content: "",
-    userId: ""
+    content: ""
   }
 
   onChangeInput = (event) => {
@@ -25,7 +23,7 @@ class FormCreatePost extends React.Component {
     const getDataUser = JSON.parse(localStorage.getItem('userData'))
     const data = {
       userName: getDataUser.displayName,
-      date: new Date().getDate(),
+      date: new Date().getTime(),
       content: content,
       userId: getDataUser.uid
     }
