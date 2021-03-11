@@ -10,6 +10,15 @@ class Dashboard extends React.Component {
   componentDidMount() {
     this.props.getPost()
   }
+
+  convertDateFormat = (date) => {
+    const dateObject = new Date(date)
+    return dateObject.toLocaleString("id-ID", {
+      month: "long",
+      day: "numeric",
+      year: "numeric"
+    })
+  }
   render () {
     const {getAllPost} = this.props
     return (
@@ -20,13 +29,14 @@ class Dashboard extends React.Component {
           getAllPost.length > 0 ? (
             <Fragment>
               {
-                getAllPost.map(resultId => {
-                  const dataPost = Object.values(resultId.data)
-                  return dataPost.map(resultData => {
-                    return (
-                      <CardContent key={resultId.id} name={resultData.userName} date={resultData.date} content={resultData.content} />
-                    )
-                  })
+                getAllPost.map(result => {
+                  // const miliSeconds = result.data.date * 1000
+                  // const dateObject = new Date(miliSeconds)
+                  // const convertDateFormat = dateObject.toLocaleString()
+                  // console.log(convertDateFormat)
+                  return (
+                    <CardContent key={result.id} name={result.data.userName} date={this.convertDateFormat(result.data.date)} content={result.data.content} />
+                  )
                 })
               }
             </Fragment>
