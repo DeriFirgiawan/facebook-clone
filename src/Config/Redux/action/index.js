@@ -72,19 +72,23 @@ export const addDataToApi = (data) => (dispatch) => {
 }
 
 export const getDataFromApi = () => (dispatch) => {
-  const urlPost = database.ref('post/')
+  const urlPost = database.ref("post/")
   return new Promise((resolve, reject) => {
     urlPost.on('value', function(snapshot) {
-      console.log(snapshot.val())
       const data = []
-      Object.keys(snapshot.val()).map(keys => {
-        data.push({
-          id: keys,
-          data: snapshot.val()[keys],
-          allData: data[keys]
+      if (snapshot.val()) {
+        Object.keys(snapshot.val()).map(keys => {
+          const uniqueId = snapshot.val()[keys]
+          Object.keys(uniqueId).map(resultUniqueID => {
+            data.push({
+              id: resultUniqueID,
+              data: uniqueId[resultUniqueID]
+            })
+          })
         })
-      })
-      dispatch({type: "SET_POSTS", value: data})
+      }
+      const dataReverseOrder = Array.prototype.reverse.call(data)
+      dispatch({type: "SET_POSTS", value: dataReverseOrder})
       resolve(snapshot.val())
     })
   })
