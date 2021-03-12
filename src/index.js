@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import firebase from './Config/Firebase'
 import './index.scss';
 import App from './Container/Pages/App';
 import reportWebVitals from './reportWebVitals';
@@ -9,8 +8,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 
 import 'boxicons/css/boxicons.css'
-
-console.log(firebase)
 ReactDOM.render(
   <React.StrictMode>
     <App />
