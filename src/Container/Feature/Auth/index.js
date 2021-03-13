@@ -9,7 +9,6 @@ import RegisterModal from '../../../Components/Molecules/RegisterModal'
 import HeroBanner from '../../../Components/Molecules/HeroBanner'
 
 import Logo from '../../../Assets/Logo/logo.svg'
-// import './_AuthLogin.module.scss'
 
 class AUTH_LOGIN_REGISTER extends React.Component {
   state = {
