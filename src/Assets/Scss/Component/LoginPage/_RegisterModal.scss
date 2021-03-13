@@ -1,0 +1,65 @@
+.modal-backdrop {
+  background-color: rgb(240, 242, 245) !important;
+}
+
+.modal {
+  &-dialog {
+    .modal-content {
+      border-radius: 8px;
+      top: 45px !important;
+      .Register-Modal-Header {
+        align-items: flex-start;
+        border-bottom: 1px solid #dadde1;
+        .modal-header-text {
+          text-align: left;
+          .modal-title {
+            color: #1c1e21;
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 38px;
+          }
+          .modal-subtitle {
+            color: #606770;
+            font-size: 15px;
+            line-height: 24px;
+          }
+        }
+      }
+
+      .modal-body {
+        .form-control {
+          background-color: #f5f6f7;
+          border-color: #ccd0d5;
+          padding: 11px;
+          font-size: 15px;
+          line-height: 16px;
+          &:focus {
+            box-shadow: none;
+          }
+        }
+
+        .form-select {
+          border-radius: 4px;
+          color: #1c1e21;
+          font-size: 15px;
+          line-height: 20px;
+        }
+      }
+
+      .modal-footer {
+        border-top: none;
+        justify-content: center;
+        .btn-success {
+          @include ButtonSuccessStyle(20px);
+          background-color: #00a400 !important;
+          border-radius: 6px;
+          font-size: 20px;
+          font-weight: 600;
+          padding: 0.50rem 16px;
+          line-height: 126%;
+          width: 45%;
+        }
+      }
+    }
+  }
+}

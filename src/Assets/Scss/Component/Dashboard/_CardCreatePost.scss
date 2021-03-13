@@ -1,0 +1,66 @@
+@import './PostModal';
+
+.Form-Post {
+  width: 500px;
+  @media (max-width: 575.98px) {
+    width: 100%;
+    &-Body {
+      &-Input {
+        width: 320px !important;
+        height: auto;
+      }
+    }
+  }
+  &-Body {
+    display: flex;
+    align-items: center;
+    &-Input {
+      cursor: pointer;
+      background-color: #F0F2F5;
+      border-radius: $radius10 + $radius10;
+      height: 40px;
+      padding: 8px 12px 8px 12px;
+      width: 420px;
+      &-Text {
+        font-size: 17px;
+        color: #65676B;
+      }
+      &:hover {
+        background-color: #e3e5e9;
+      }
+    }
+  }
+  &-Footer {
+    cursor: pointer;
+    @include FlexBox(flex, center, space-between);
+    background-color: #fff !important;
+    margin: 0 1rem 0 1rem;
+    @media (max-width: 575.98px) {
+      justify-content: center;
+    }
+    &-Icon {
+      @include FlexBox(flex, center, center);
+      border-radius: $radius10;
+      padding: 8px;
+      .bx {
+        color: #E42645;
+        font-size: 24px;
+      }
+      .text {
+        color: $colorTextBlack100;
+        font-size: 15px;
+        font-weight: bold;
+      }
+      &:nth-child(2) {
+        .bx {
+          color: $colorGreenSecondary50;
+        }
+      }
+    
+      &:hover {
+        background-color: #f2f2f2;
+      }
+    }
+    
+  }
+}

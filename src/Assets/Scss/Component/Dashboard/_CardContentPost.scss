@@ -1,0 +1,57 @@
+.Post-Content {
+  @include CardStyle(none);
+  &-Body {
+    &-Profile {
+      display: inline-flex;
+      align-items: center;
+      width: 100%;
+      &-Information {
+        .Profile-Name, span {
+          padding: 0;
+          margin: 0;
+          line-height: 15px;
+        }
+        span {
+          color: #65676B;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  &-Footer {
+    background-color: #fff !important;
+    border-radius: 10px !important;
+    border: none !important;
+    &-Comment {
+      @include FlexBox(flex, center, space-between);
+      border-top: 1px solid #DADDE1;
+      border-bottom: 1px solid #DADDE1;
+      color: #65676B;
+      padding: .5rem 1rem;
+      @media (max-width: 575.98px) {
+        padding: .5rem .5rem;
+        .Post-Icon {
+          .bx {
+            font-size: 20px !important;
+          }
+          &-Text {
+            font-size: 14px;
+            font-weight: 400;
+          }
+          .ms-2 {
+            margin-left: .2rem !important;
+          }
+        }
+      }
+      .Post-Icon {
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        &-Text {
+          font-size: 15px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+// Custom Class
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $bgGreyPrimary !important;
+  font-family: 'Poppins', sans-serif !important;
+  overflow-x: hidden;
+}
+
+
+ul,li,a {
+  list-style: none;
+  text-decoration: none !important;
+}

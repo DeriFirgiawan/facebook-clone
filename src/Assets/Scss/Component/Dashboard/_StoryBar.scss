@@ -1,0 +1,45 @@
+.card.StoryBar {
+  @include CardStyle(none, 590px);
+  height: 73px;
+  .card-body {
+    @include FlexBox(flex, center, flex-start, nowrap, row);
+    border-radius: $radius10;
+    padding: 8px 8px !important;
+    margin: 0.5rem;
+    &-icon {
+      @include FlexBox(inline-flex, center, center);
+      background-color: #E7F3FF;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      color: #385898;
+      .bx {
+        font-size: 24px;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    &-text {
+      text-align: left;
+      &-heading, &-paragraph {
+        @include RMP();
+      }
+      &-heading {
+        color: #050505;
+        font-weight: 600;
+        font-size: 1.0625rem;
+        line-height: 1.1765;
+      }
+      &-paragraph {
+        color: #65676B;
+        font-size: .9375rem;
+        line-height: 1.3333;
+      }
+    }
+    &:hover {
+      background-color: #EBEDF0;
+      cursor: pointer;
+    }
+  }
+}

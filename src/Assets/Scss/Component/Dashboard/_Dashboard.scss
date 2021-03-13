@@ -1,0 +1,17 @@
+@import './StoryBar';
+@import './CardCreatePost';
+@import './CardContentPost';
+
+.content {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 60px 0 60px;
+  @include FlexBox(flex, center, center, nowrap, column);
+  // Mobile Version
+  @media (max-width: 575.98px) {
+    width: 100%;
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-left: var(--bs-gutter-x,.75rem);
+  }
+}

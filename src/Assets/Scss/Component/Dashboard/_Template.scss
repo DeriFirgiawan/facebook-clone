@@ -1,0 +1,29 @@
+@import './Dashboard';
+
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 5rem;
+  @media (max-width: 575.98px) {
+    align-items: center;
+    justify-content: center;
+  }
+  @media (max-width: 991.98px) {
+    align-items: center;
+    justify-content: center;
+  }
+  .sidebar {
+    position: fixed;
+  }
+  .navbar-collapse {
+    width: 315px;
+    .nav-link {
+      color: #050505;
+      font-size: 15px;
+      transition: 0.4s ease;
+      &:hover {
+        background-color: #ebecf0;
+      }
+    }
+  }
+}

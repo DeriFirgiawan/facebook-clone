@@ -1,0 +1,59 @@
+@import './HeroBanner';
+@import './LoginCard';
+@import './RegisterModal';
+
+
+.Login__Page {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .banner {
+    position: relative;
+    top: 4em;
+  }
+  .card {
+    top: 6em;
+  }
+  /*------------- Mobile Version -------------*/
+  @media (max-width: 575.98px) {
+    flex-direction: column;
+    justify-content: center;
+    .banner {
+      width: 100% !important;
+      &-hero {
+        img {
+          width: 148px;
+          height: 52px;
+        }
+      }
+    }
+    .card {
+      width: 100%;
+    }
+  }
+  /*------------- Tablet Version -------------*/
+  @media (max-width: 991.98px) {
+    flex-direction: column;
+    justify-content: center;
+    .banner {
+      top: 0;
+      margin-bottom: 15px !important;
+      width: 500px;
+      text-align: center !important;
+      
+      &-text {
+        padding: 0;
+        h2 {
+          width: 500px !important;
+          line-height: 28px;
+          font-size: 24px;
+          
+        }
+      }
+    }
+
+    .card {
+      top: 0;
+    }
+  } 
+}

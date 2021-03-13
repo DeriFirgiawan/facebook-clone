@@ -1,0 +1,49 @@
+// Reset Margin & Padding
+@mixin RMP() {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+// Flex
+@mixin FlexBox($flex: flex,$align: center, $content: center, $wrap: nowrap, $direction: row) {
+  display: $flex;
+  align-items: $align;
+  justify-content: $content;
+  flex-wrap: $wrap;
+  flex-direction: $direction;
+}
+
+// Button
+@mixin ButtonSuccessStyle($sizeFont: 17px) {
+  background-color: $colorGreenPrimary !important;
+  color: #ffffff;
+  border-color: $colorGreenPrimary !important;
+  outline: $colorGreenPrimary !important;
+  font-size: $sizeFont;
+  &:hover{
+    background-color: $colorGreenSecondary !important;
+    border-color: $colorGreenSecondary !important;
+    outline: $colorGreenSecondary !important;
+  }
+  &:focus{
+    background-color: $colorGreenSecondary !important;
+    border-color: $colorGreenSecondary !important;
+    outline: $colorGreenSecondary !important;
+  }
+  &::after:active {
+    background-color: $colorGreenSecondary !important;
+    border-color: $colorGreenSecondary !important;
+    outline: $colorGreenSecondary !important;
+  }
+}
+
+// Card
+@mixin CardStyle($border: 1px solid #ddd, $width: 500px) {
+  border: $border !important;
+  box-shadow: $boxShadow !important;
+  border-radius: $radius10;
+  width: $width !important;
+  @media (max-width: 575.98px) {
+    width: 100% !important;
+  }
+}

@@ -1,0 +1,19 @@
+.banner {
+  width: 590px;
+  .banner-hero {
+    position: relative;
+    top: 10px;
+  }
+  &-text {
+    padding: 0 30px;
+    h2 {
+      width: 540px !important;
+      font-size: 25px;
+      line-height: 32px;
+      color: $colorTextBlack200;
+    }
+  }
+  @media (max-width: 575.98px) {
+    width: 100%;
+  }
+}

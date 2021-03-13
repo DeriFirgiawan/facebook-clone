@@ -1,0 +1,48 @@
+.card {
+  box-shadow: $boxShadow50;
+  width: 396px;
+  border-radius: $radius10 !important;
+  padding-bottom: 5px;
+  &-body {
+    .mb-3 {
+      .form-control {
+        border: 1px solid #ddd !important;
+        border-radius: 6px;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 25px;
+        padding: 14px 16px;
+        &::placeholder {
+          color: #aaaeb4;
+        }
+        &:focus::placeholder {
+          color: $colorTextGrey100;
+        }
+        &:focus {
+          box-shadow: none;
+          border: 1px solid #18A0FB !important;
+        }
+      }
+    }
+    .btn-primary {
+      background-color: $colorBluePrimary !important;
+      font-size: 20px;
+    }
+    .btn-primary, .btn-success {
+      font-weight: 600;
+      padding: 0.50rem 16px;
+    }
+    .card-bottom {
+      .line-1 {
+        align-items: center;
+        border-bottom: 1px solid #dadde1;
+        display: flex;
+        margin: 20px 16px;
+        text-align: center;
+      }
+      .btn-success {
+        @include ButtonSuccessStyle();
+      }
+    }
+  }
+}
