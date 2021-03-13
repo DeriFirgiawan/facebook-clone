@@ -39,6 +39,7 @@ export const registerUserToFirebase = (data) => (dispatch) => {
 
 export const loginUserToAPI = (data) => (dispatch) => {
   return new Promise((resolve, reject) => {
+    dispatch({type: "CHANGE_ISLOGIN", value: true })
     dispatch({type: "CHANGE_ISLOADING", value: true})
     firebase.auth().signInWithEmailAndPassword(data.email, data.password)
       .then(res => {
@@ -49,11 +50,13 @@ export const loginUserToAPI = (data) => (dispatch) => {
           refreshToken: res.user.refreshToken
         }
         dispatch({type: "CHANGE_ISLOADING", value: false})
+        
         dispatch({type: "CHANGE_USER", value: dataUser })
         resolve(dataUser)
       })
 
       .catch((error) => {
+        dispatch({type: "CHANGE_ISLOGIN", value: false})
         const errorCode = error.code
         const errorMessage = error.message
         console.error(errorCode)
