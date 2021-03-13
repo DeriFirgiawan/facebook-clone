@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route,} from 'react-router-dom'
+import {withRouter} from 'react-router'
 import {connect} from 'react-redux'
 
 import Templates from '../Templates'
@@ -28,19 +29,24 @@ class RouterHome extends React.Component {
   }
   render() {
     const {fullName, shortName} = this.state
+    const getDataUser = JSON.parse(localStorage.getItem('userData'))
     return (
       <Fragment>
-        <Router>
-          <Templates shortName={shortName} fullName={fullName}
-          sidebar={
-            <Route path="/" exact>
-              <SideHome fullName={fullName} />
-            </Route>
-          } 
-          content={
-            <Route path="/" exact component={Dashboard} />
-          } />
-        </Router>
+        {
+          this.props.userIsLogin || getDataUser ? (
+            <Router>
+              <Templates shortName={shortName} fullName={fullName}
+              sidebar={
+                <Route path="/" exact>
+                  <SideHome fullName={fullName} />
+                </Route>
+              } 
+              content={
+                <Route path="/" exact component={Dashboard} />
+              } />
+            </Router>
+          ) : this.props.history.push("/login")
+        }
       </Fragment>
     )
   }
@@ -51,4 +57,4 @@ const reduxState = (state) => ({
   userIsLogin: state.isLogin
 })
 
-export default connect(reduxState, null)(RouterHome)
+export default withRouter(connect(reduxState, null)(RouterHome))
