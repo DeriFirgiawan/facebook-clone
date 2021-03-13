@@ -6,8 +6,6 @@ import Button from '../../Atom/Button'
 import Linked from '../../Atom/Linked'
 import {TextInfo} from '../../Atom/Info'
 
-import './LoginCard.scss'
-
 const LoginCard = ({changeInput, textInfo, clickToLogin}) => {
   return (
     <Card>

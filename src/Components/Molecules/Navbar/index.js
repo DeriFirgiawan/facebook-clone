@@ -10,8 +10,6 @@ import SideHome from '../SideHome'
 import Dropdown, {DropdownMenu} from '../../Atom/Dropdown'
 import Linked from '../../Atom/Linked'
 
-import './Navbar.scss'
-
 const Navbar = ({shortName, fullName}) => {
   const [showSideBar, setShowSideBar] = useState(false)
 
@@ -32,7 +30,7 @@ const Navbar = ({shortName, fullName}) => {
     )
   }
   return (
-    <nav className="navbar fixed-top navbar-expand-lg navbar-light">
+    <nav className="navbar fixed-top navbar-expand-lg navbar-light shadows-1">
       <div className="container-fluid">
         <NavbarBrand />
         <NavbarSearch />

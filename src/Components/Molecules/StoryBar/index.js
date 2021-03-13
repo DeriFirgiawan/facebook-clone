@@ -1,12 +1,10 @@
 import {Card, CardBody} from '../../Atom/Card'
 
-import './_StoryBar.scss'
-
 const StoryBar = () => {
   return (
-    <Card classes="StoryBar shadows-1 border-0">
+    <Card classes="StoryBar">
       <CardBody classes="StoryBar-content">
-        <div className="card-body-icon">
+        <div className="card-body-icon wh-40">
           <i className="bx bx-plus"></i>
         </div>
         <div className="card-body-text ms-3">

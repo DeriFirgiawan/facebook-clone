@@ -2,14 +2,12 @@ import {Card, CardBody, CardFooter} from '../../Atom/Card'
 import Dropdown, {DropdownMenu} from '../../Atom/Dropdown'
 import {ImageProfile} from '../../Atom/DummyProfile'
 
-import './CardContent.scss'
-
 const CardContent = ({name, date, content}) => {
   return (
-    <Card classes="Post-Content mt-3 shadows-1 border-0">
+    <Card classes="Post-Content mt-3">
       <CardBody classes="Post-Content-Body">
         <div className="Post-Content-Body-Profile">
-          <ImageProfile size="40" alt="user" />
+          <ImageProfile size="40" alt={name} />
           <div className="Post-Content-Body-Profile-Information mt-1 ms-3">
             <p className="Profile-Name fw-bold">
               {name}

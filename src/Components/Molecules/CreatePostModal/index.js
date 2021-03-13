@@ -6,8 +6,6 @@ import {
 } from '../../Atom/Modal'
 import {ImageProfile} from '../../Atom/DummyProfile'
 
-import './CreatePostmodal.scss'
-
 const CreatePostModal = ({childInput, childButton, fullName}) => {
   return (
     <Modal>

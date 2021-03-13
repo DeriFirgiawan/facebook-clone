@@ -1,5 +1,3 @@
-import './FormPostUpload.scss'
-
 const FormPostUpload = ({classes, icon, text}) => {
   return (
     <div className={"Form-Post-Footer-Icon " + classes}>

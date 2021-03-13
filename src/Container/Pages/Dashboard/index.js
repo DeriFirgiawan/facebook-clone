@@ -4,7 +4,6 @@ import {getDataFromApi} from '../../../Config/Redux/action'
 import FormCreatePost from '../../Feature/FormCreatePost'
 import StoryBar from '../../../Components/Molecules/StoryBar'
 import CardContent from '../../../Components/Molecules/CardContent'
-import './_Dashboard.scss'
 
 class Dashboard extends React.Component {
   componentDidMount() {

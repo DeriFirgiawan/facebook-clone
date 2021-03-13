@@ -4,7 +4,6 @@ import {store} from '../../../Config/Redux'
 import AUTH_LOGIN_REGISTER from '../../Feature/Auth'
 import RouterHome from '../../../Routers'
 
-import './_App.module.scss'
 
 export default function App() {
   return (

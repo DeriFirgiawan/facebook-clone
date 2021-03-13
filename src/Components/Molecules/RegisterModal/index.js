@@ -11,7 +11,6 @@ import {Row, Columns} from '../../Layout/Grid'
 import dataInputFields from './dataInputFields'
 import {getDataDays, getDataMonths, getDataYears} from '../../../Config/Moment'
 
-import './RegisterModal.scss'
 
 const RegisterModal = ({registerChangeText, clickToRegister}) => {
   const years = getDataYears(116)
@@ -49,6 +48,7 @@ const RegisterModal = ({registerChangeText, clickToRegister}) => {
                 getDataDays.map(result => {
                   return (
                     <option 
+                    defaultValue="DEFAULT"
                     value={result.value} 
                     key={result.id} 
                     selected>
@@ -64,7 +64,7 @@ const RegisterModal = ({registerChangeText, clickToRegister}) => {
               {
                 getDataMonths.map(result => {
                   return (
-                    <option value={result} key={result} selected>{result}</option>
+                    <option defaultValue="DEFAULT" value={result} key={result} selected>{result}</option>
                   )
                 })
               }
@@ -75,7 +75,7 @@ const RegisterModal = ({registerChangeText, clickToRegister}) => {
               {
                 years.map(resultYears => {
                   return (
-                    <option selected value={resultYears} key={resultYears}>{resultYears}</option>
+                    <option defaultValue="DEFAULT" selected value={resultYears} key={resultYears}>{resultYears}</option>
                   )
                 })
               }

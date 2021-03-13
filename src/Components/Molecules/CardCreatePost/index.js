@@ -2,8 +2,6 @@ import {Card, CardBody, CardFooter} from '../../Atom/Card'
 import {ImageProfile} from '../../Atom/DummyProfile'
 import FormPostUpload from './FormPostUpload'
 
-import './CardCreatePost.scss'
-
 const CardCreatePost = ({shortName}) => {
   return (
     <Card classes="Form-Post mt-3 shadows-1 border-0">
