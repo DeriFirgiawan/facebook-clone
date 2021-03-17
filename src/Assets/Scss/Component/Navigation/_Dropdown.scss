@@ -1,0 +1,71 @@
+// All Dropdown in Navbar
+#dropdown-notification, #dropdown-more {
+  .dropdown-menu {
+    border: none;
+    border-radius: $radius10;
+    box-shadow: 0 12px 28px 0 rgba($color: #000000, $alpha: 0.2),0 2px 4px 0 rgba($color: #000000, $alpha: 0.1),inset 0 0 0 1px rgba(255,255,255,0.5);
+    width: 360px;
+  }
+}
+
+// Dropdown More
+#dropdown-more {
+  .dropdown-menu {
+    li {
+      margin: 0;
+      padding: 3px 8px 3px 8px;
+    }
+    .dropdown-item {
+      align-items: center;
+      border-radius: $radius10;
+      cursor: pointer;
+      display: inline-flex;
+      white-space: pre-wrap;
+      .User-Profile {
+        span {
+          font-size: 17px;
+          &:nth-child(2) {
+            font-size: 15px;
+          }
+        }
+      }
+      &:hover {
+        background-color: $bgGreyPrimary;
+      }
+      &-icon {
+        background-color: #E4E6EB;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        padding: .5rem 1rem;
+        border-radius: 45%;
+        .bx {
+          font-size: 20px;
+        }
+      }
+
+      &:nth-child(2) {
+        align-items: normal !important;
+      }
+
+      &-text {
+        @include FlexBox(inline, center, center, wrap, column);
+        margin: 0;
+        padding: 0;
+        &-paragraph {
+          .text-muted {
+            position: inherit;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Dropdown Notification
+// #dropdown-notification {
+  
+// }

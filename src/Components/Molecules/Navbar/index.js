@@ -10,7 +10,7 @@ import SideHome from '../SideHome'
 import Dropdown, {DropdownMenu} from '../../Atom/Dropdown'
 import Linked from '../../Atom/Linked'
 
-const Navbar = ({shortName, fullName}) => {
+const Navbar = ({shortName, fullName, clickToLogout}) => {
   const [showSideBar, setShowSideBar] = useState(false)
 
   function handleShowSideBar() {
@@ -63,12 +63,103 @@ const Navbar = ({shortName, fullName}) => {
             <i className="bx bxl-messenger icon-size-24"></i>
           </NavLink>
 
-          <Dropdown classes="nav-link d-inline-flex align-content-center justify-content-center bg-grey-50 radius-50 wh-40" icon="bxs-bell">
-            <DropdownMenu />
+          <Dropdown classes="nav-link d-inline-flex align-content-center justify-content-center bg-grey-50 radius-50 wh-40" id="dropdown-notification" icon="bxs-bell">
+            <DropdownMenu>
+              <li>
+                <div className="dropdown-item d-flex align-content-center">
+                  <h4 className="fw-bold">Notifikasi</h4>
+                  <div className="dropdown-item-icon-more ms-auto">
+                    <i className="bx bx-dots-horizontal-rounded"></i>
+                  </div>
+                </div>
+              </li>
+              <li><span className="dropdown-item">Another action</span></li>
+              <li><span className="dropdown-item">Something else here</span></li>
+            </DropdownMenu>
           </Dropdown>
 
-          <Dropdown classes="nav-link d-inline-flex align-content-center justify-content-center bg-grey-50 radius-50 wh-40" icon="bxs-down-arrow">
-            <DropdownMenu />
+          <Dropdown classes="nav-link d-inline-flex align-content-center justify-content-center bg-grey-50 radius-50 wh-40" id="dropdown-more" icon="bxs-down-arrow">
+            <DropdownMenu>
+              <li>
+                <Linked url="#" className="dropdown-item">
+                  <ImageProfile size="40" alt={fullName} />
+                  <div className="User-Profile ms-3 d-inline-flex justify-content-center align-content-center flex-column">
+                    <span className="fw-bold">
+                      {fullName}
+                    </span>
+                    <span className="text-muted">
+                      Lihat Profile Anda
+                    </span>
+                  </div>
+                </Linked>
+              </li>
+
+              <li>
+                <div className="line-1"></div>
+                <Linked url="#" className="dropdown-item">
+                  <div className="dropdown-item-icon">
+                    <i className="bx bxs-message-error"></i>
+                  </div>
+                  <div className="dropdown-item-text ms-2">
+                    <div className="dropdown-item-text-subheading">
+                      <span>
+                        Beri Masukan
+                      </span>
+                    </div>
+                    <div className="dropdown-item-text-paragraph">
+                      <span className="text-muted">
+                        Bantu kami menyempurnakan layanan Facebook yang baru.
+                      </span>
+                    </div>
+                  </div>
+                </Linked>
+                <div className="line-1"></div>
+              </li>
+
+              <li>
+                <Linked url="#" className="dropdown-item">
+                  <div className="dropdown-item-icon">
+                    <i className="bx bxs-cog"></i>
+                  </div>
+                  <span className="ms-3">
+                    Pengaturan & Privasi
+                  </span>
+                </Linked>
+              </li>
+
+              <li>
+                <Linked url="#" className="dropdown-item">
+                  <div className="dropdown-item-icon">
+                    <i className="bx bxs-help-circle"></i>
+                  </div>
+                  <span className="ms-3">
+                    Bantuan & Dukungan
+                  </span>
+                </Linked>
+              </li>
+
+              <li>
+                <Linked url="#" className="dropdown-item">
+                  <div className="dropdown-item-icon">
+                    <i className="bx bxs-moon"></i>
+                  </div>
+                  <span className="ms-3">
+                    Tampilan & Aksesibilitas
+                  </span>
+                </Linked>
+              </li>
+
+              <li>
+                <span className="dropdown-item" onClick={clickToLogout}>
+                  <div className="dropdown-item-icon">
+                    <i className="bx bxs-log-out"></i>
+                  </div>
+                  <span className="ms-3">
+                    Keluar
+                  </span>
+                </span>
+              </li>
+            </DropdownMenu>
           </Dropdown>
         </NavbarNav>
       </div>

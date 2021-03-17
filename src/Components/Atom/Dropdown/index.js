@@ -1,6 +1,6 @@
-const Dropdown = ({icon, children, classes, position}) => {
+const Dropdown = ({id, icon, children, classes, position}) => {
   return (
-    <div className={"dropdown " + position}>
+    <div className={"dropdown " + position} id={id}>
       <span className={classes} role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
         <i className={"bx position-relative top " + icon}></i>
       </span>
@@ -14,12 +14,10 @@ Dropdown.defaultProps = {
   position: ""
 }
 
-export const DropdownMenu = () => {
+export const DropdownMenu = ({children}) => {
   return (
     <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
-      <li><span className="dropdown-item">Action</span></li>
-      <li><span className="dropdown-item">Another action</span></li>
-      <li><span className="dropdown-item">Something else here</span></li>
+      {children}
     </ul>
   )
 }
