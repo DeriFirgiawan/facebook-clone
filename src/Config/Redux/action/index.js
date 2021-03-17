@@ -66,6 +66,16 @@ export const loginUserToAPI = (data) => (dispatch) => {
   })
 }
 
+export const logoutToApi = () => {
+  return dispatch => {
+    dispatch({
+      type: "CHANGE_ISLOGIN",
+      value: false
+    })
+    localStorage.removeItem("userData")
+  }
+}
+
 export const addDataToApi = (data) => (dispatch) => {
   database.ref('post/' + data.userId).push({
     userName: data.userName,
