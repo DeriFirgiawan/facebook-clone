@@ -1,0 +1,81 @@
+.Profile-Page {
+  @include FlexBox(flex, center, center, nowrap, column);
+  margin-top: 3.5rem;
+  @media (max-width: 991.98px) {
+    margin-top: 4.2rem;
+  }
+  
+  .Banner-Profile {
+    background-color: #fff;
+    box-shadow: $boxShadow;
+    width: 100%;
+    &-Content {
+      @include FlexBox(flex, center, center, nowrap, column);
+      &-Cover {
+        background-color: $bgGreyPrimary;
+        border-radius: 10px;
+        width: 940px;
+        height: 348px;
+      }
+      &-Hero {
+        margin-top: -145px !important;
+      }
+      &-Hero-Name {
+        font-size: 32px;
+        font-weight: 600;
+      }
+  
+      &-Navigation {
+        margin: 0;
+        padding: 20px;
+        border-top: 1px solid #c4c4c4;
+        width: 900px;
+        &-Link {
+          cursor: pointer;
+          color: $colorTextBlack100;
+          border-radius: $radius10;
+          font-size: .9375rem;
+          font-weight: 600;
+          padding: 20px 25px;
+          &:hover {
+            background-color: $bgGreyPrimary;
+          }
+          &:nth-child(1) {
+            color: $colorBluePrimary !important;
+            border-bottom: 4px solid $colorBluePrimary;
+            border-radius: 0;
+          }
+        }
+      }
+    }
+    @media (max-width: 575.98px) {
+      &-Content {
+        &-Cover {
+          width: 100%;
+        }
+  
+        &-Navigation {
+          width: 100%;
+          &-Link {
+            padding: 10px 15px;
+          }
+        }
+      }
+    }
+    @media (max-width: 991.98px) {
+      &-Content {
+        &-Cover {
+          width: 100%;
+        }
+
+        &-Navigation {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &-Content {
+    @include FlexBox(flex, center, center, nowrap, column);
+  }
+}
