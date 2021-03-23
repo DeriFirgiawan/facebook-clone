@@ -1,50 +1,23 @@
-import React, {Fragment} from 'react'
+import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
 import {getDataFromApi} from '../../../Config/Redux/action'
 import FormCreatePost from '../../Feature/FormCreatePost'
+import ContentPost from '../../Feature/ContentPost'
 import StoryBar from '../../../Components/Molecules/StoryBar'
-import CardContent from '../../../Components/Molecules/CardContent'
 
-class Dashboard extends React.Component {
-  componentDidMount() {
-    this.props.getPost()
-  }
-
-  convertDateFormat = (date) => {
-    const dateObject = new Date(date)
-    return dateObject.toLocaleString("id-ID", {
-      month: "long",
-      day: "numeric",
-      year: "numeric"
-    })
-  }
-  render () {
-    const {getAllPost} = this.props
-    return (
-      <div className="content">
-        <StoryBar />
-        <FormCreatePost />
-        {
-          getAllPost.length > 0 ? (
-            <Fragment>
-              {
-                getAllPost.map(result => {
-                  // const miliSeconds = result.data.date * 1000
-                  // const dateObject = new Date(miliSeconds)
-                  // const convertDateFormat = dateObject.toLocaleString()
-                  // console.log(convertDateFormat)
-                  return (
-                    <CardContent key={result.id} name={result.data.userName} date={this.convertDateFormat(result.data.date)} content={result.data.content} />
-                  )
-                })
-              }
-            </Fragment>
-          ) : null
-        }
-        
-      </div>
-    )
-  }
+const Dashboard = ({getAllPost, getPost}) => {
+  useEffect(() => {
+    getPost()
+  }, [getPost])
+  return (
+    <div className="content">
+      <StoryBar />
+      <FormCreatePost />
+      {
+        ContentPost(getAllPost)
+      }
+    </div>
+  )
 }
 
 const reduxState = (state) => ({
