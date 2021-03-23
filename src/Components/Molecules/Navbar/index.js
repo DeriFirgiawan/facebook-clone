@@ -48,12 +48,12 @@ const Navbar = ({shortName, fullName, clickToLogout}) => {
         </NavbarNav>
         <NavbarToggle onClick={handleShowSideBar} />
         <NavbarNav classes="ms-auto" id="navigationTwo">
-          <Linked className="nav-link user-profile hide-sm hide-md" url="#">
+          <NavLink className="nav-link user-profile hide-sm hide-md" to="/profile">
             <ImageProfile size="28" alt="user" />
             <span className="profile-name fw-bold">
               {shortName}
             </span>
-          </Linked>
+          </NavLink>
 
           <NavLink className="nav-link d-inline-flex align-content-center justify-content-center bg-grey-50 radius-50 wh-40" to="/post" title="Post">
             <i className="bx bx-plus icon-size-24"></i>
