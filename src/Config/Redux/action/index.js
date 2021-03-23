@@ -84,8 +84,9 @@ export const addDataToApi = (data) => (dispatch) => {
   })
 }
 
-export const getDataFromApi = () => (dispatch) => {
+export const getDataFromApi = (userId) => (dispatch) => {
   const urlPost = database.ref("post/")
+  
   return new Promise((resolve, reject) => {
     urlPost.on('value', function(snapshot) {
       const data = []
@@ -102,6 +103,24 @@ export const getDataFromApi = () => (dispatch) => {
       }
       const dataReverseOrder = Array.prototype.reverse.call(data)
       dispatch({type: "SET_POSTS", value: dataReverseOrder})
+      resolve(snapshot.val())
+    })
+  })
+}
+
+export const getDataPostById = userId => dispatch => {
+  const urlPostById = database.ref("post/" + userId)
+  return new Promise((resolve, reject) => {
+    urlPostById.on("value", function(snapshot) {
+      const dataById = []
+      Object.keys(snapshot.val()).map(key => {
+        dataById.push({
+          id: key,
+          data: snapshot.val()[key]
+        })
+      })
+      const dataReverseOrder = Array.prototype.reverse.call(dataById)
+      dispatch({type: "SET_POSTS_BY_ID", value: dataReverseOrder})
       resolve(snapshot.val())
     })
   })

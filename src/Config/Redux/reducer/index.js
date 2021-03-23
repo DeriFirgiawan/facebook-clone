@@ -3,7 +3,8 @@ const initialState = {
   isLoading: true,
   isLogin: false,
   user: {},
-  posts: []
+  posts: [],
+  postById: []
 }
 
 const reducer = (state=initialState, action) => {
@@ -32,6 +33,13 @@ const reducer = (state=initialState, action) => {
     return {
       ...state,
       posts: action.value
+    }
+  }
+
+  if (action.type === "SET_POSTS_BY_ID") {
+    return {
+      ...state,
+      postById: action.value
     }
   }
 
