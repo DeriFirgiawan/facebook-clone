@@ -1,72 +1,72 @@
-import React, {Fragment} from 'react'
-import {BrowserRouter as Router, Route,} from 'react-router-dom'
-import {withRouter} from 'react-router'
-import {connect} from 'react-redux'
+/* eslint-disable react-hooks/exhaustive-deps */
+import { Fragment, useState, useEffect } from 'react'
+import { Route } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { useHistory } from 'react-router-dom'
+import { withRouter } from 'react-router'
 
-import {logoutToApi} from '../Config/Redux/action'
+import { logoutToApi } from '../Config/Redux/action'
 
-import Templates from '../Templates'
+// import AUTH_LOGIN_REGISTER from '../Container/Feature/Auth'
 import Dashboard from '../Container/Pages/Dashboard'
-
+import Profile from '../Container/Pages/Profile'
+import Navbar from '../Components/Molecules/Navbar'
 import SideHome from '../Components/Molecules/SideHome'
 
-class RouterHome extends React.Component {
-  state = {
-    fullName: "",
-    shortName: "",
-  }
-
-  componentDidMount() {
-    const getDataUser = JSON.parse(localStorage.getItem('userData'))
-    if (this.props.userIsLogin || getDataUser) {
-      const fullName = getDataUser.displayName
-      const shortName = fullName.split(' ')
-      this.setState({
-        fullName: fullName,
-        shortName: shortName[0]
-      })
-    } else {
-      this.props.history.push("/login")
+const Routers = ({isUserLogin, authLogout}) => {
+  const history = useHistory()
+  const [fullName, setFullName] = useState("")
+  const [firstName, setFirstName] = useState("")
+  const getDataUser = JSON.parse(localStorage.getItem("userData"))
+  
+  const getUserName = () => {
+    if (getDataUser) {
+      const userFullName = getDataUser.displayName
+      const userFirstName = userFullName.split(" ")
+      setFullName(userFullName)
+      setFirstName(userFirstName[0])
     }
   }
+  
+  useEffect(() => {
+    getUserName()
+  }, [fullName, firstName])
 
-  handleClickToLogout = () => {
-    this.props.userLogout()
-    this.props.history.push("/login")
+  const handleUserLogout = () => {
+    console.log("Logout")
+    authLogout()
+    history.push("/login")
   }
-
-  render() {
-    const {fullName, shortName} = this.state
-    const getDataUser = JSON.parse(localStorage.getItem('userData'))
-    return (
-      <Fragment>
-        {
-          this.props.userIsLogin || getDataUser ? (
-            <Router>
-              <Templates shortName={shortName} fullName={fullName} clickToLogout={this.handleClickToLogout}
-              sidebar={
-                <Route path="/" exact>
+  return (
+    <Fragment>
+      {
+        getDataUser || isUserLogin ? (
+          <Fragment>
+            <Navbar shortName={firstName} fullName={fullName} clickToLogout={handleUserLogout} />
+            <Route path="/" exact>
+              <main className="wrapper">
+                <div className="sidebar navbar-collapse hide-md hide-sm">
                   <SideHome fullName={fullName} />
-                </Route>
-              } 
-              content={
-                <Route path="/" exact component={Dashboard} />
-              } />
-            </Router>
-          ) : this.props.history.push("/login")
-        }
-      </Fragment>
-    )
-  }
+                </div>
+                <Dashboard />
+              </main>
+            </Route>
+            <Route path="/profile" exact >
+              <Profile fullName={fullName} />
+            </Route>
+          </Fragment>
+        ) : history.push("/login")
+      }
+    </Fragment>
+  )
 }
 
-const reduxState = (state) => ({
-  userName: state.user,
-  userIsLogin: state.isLogin
+const mapStateToProps = (state) => ({
+  isUserLogin: state.isLogin
 })
 
-const reduxDispatch = (dispatch) => ({
-  userLogout: () => dispatch(logoutToApi())
+const mapDispatchToProps = (dispatch) => ({
+  authLogout: () => dispatch(logoutToApi())
 })
 
-export default withRouter(connect(reduxState, reduxDispatch)(RouterHome))
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Routers))
