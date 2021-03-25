@@ -1,0 +1,37 @@
+#skeleton.card {
+  @include CardStyle(none);
+  transition: .5s ease-in-out;
+  .Skeleton-Header {
+    @include FlexBox(inline-flex, center, flex-start)
+  }
+  &::after {
+    transition: 5s ease-in-out;
+  }
+}
+
+// Base style Skeleton
+.Skeleton {
+  background: $bgGreyPrimary;
+  margin: 10px;
+  border-radius: 4px;
+}
+
+// Skeleton Text
+.Skeleton.text {
+  width: 65%;
+  height: 15px;
+}
+
+.Skeleton.title {
+  width: 250px;
+  height: 15px;
+  &:nth-child(2) {
+    width: 200px;
+  }
+}
+
+.Skeleton.hero-40 {
+  width: 40px;
+  border-radius: 45%;
+  height: 40px;
+}
