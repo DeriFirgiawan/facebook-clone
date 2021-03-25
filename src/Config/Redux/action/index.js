@@ -113,12 +113,14 @@ export const getDataPostById = userId => dispatch => {
   return new Promise((resolve, reject) => {
     urlPostById.on("value", function(snapshot) {
       const dataById = []
-      Object.keys(snapshot.val()).map(key => {
-        dataById.push({
-          id: key,
-          data: snapshot.val()[key]
+      if (snapshot.val()) {
+        Object.keys(snapshot.val()).map(key => {
+          dataById.push({
+            id: key,
+            data: snapshot.val()[key]
+          })
         })
-      })
+      }
       const dataReverseOrder = Array.prototype.reverse.call(dataById)
       dispatch({type: "SET_POSTS_BY_ID", value: dataReverseOrder})
       resolve(snapshot.val())
