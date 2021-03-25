@@ -1,9 +1,9 @@
-import {Fragment} from 'react'
+import React, { Fragment, Suspense } from 'react'
 
-import CardContent from '../../../Components/Molecules/CardContent'
+import { SkeletonCard } from '../../../Skeletons'
+const CardContent = React.lazy(() => import('../../../Components/Molecules/CardContent'));
 
 const ContentPost = (getState) => {
-
   const convertDateFormat = (date) => {
     const dateObject = new Date(date)
     return dateObject.toLocaleString("id-ID", {
@@ -20,12 +20,14 @@ const ContentPost = (getState) => {
             {
               getState.map(result => {
                 return(
-                  <CardContent key={result.id} name={result.data.userName} date={convertDateFormat(result.data.date)} content={result.data.content} />
+                  <Suspense fallback={<SkeletonCard />} key={Math.random().toString(36).substr(2, 9)}>
+                    <CardContent name={result.data.userName} date={convertDateFormat(result.data.date)} content={result.data.content} />
+                  </Suspense>
                 )
               })
             }
           </Fragment>
-        ) : null
+        ) : <SkeletonCard />
       }
     </Fragment>
   )
