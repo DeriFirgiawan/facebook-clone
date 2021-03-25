@@ -18,18 +18,20 @@
 
 // Skeleton Text
 .Skeleton.text {
-  width: 65%;
+  width: 90%;
   height: 15px;
 }
 
+// Skeleton Title
 .Skeleton.title {
-  width: 250px;
+  width: 200px;
   height: 15px;
   &:nth-child(2) {
-    width: 200px;
+    width: 150px;
   }
 }
 
+// Skeleton Image / Hero
 .Skeleton.hero-40 {
   width: 40px;
   border-radius: 45%;
